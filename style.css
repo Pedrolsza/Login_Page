@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 #all p, #pin p {
     margin-bottom: -5px; 
@@ -14,8 +15,8 @@ input{
 }
 
 body {
-    background-color: aqua;
-    font-family: "BioRhyme", serif;
+    background-color: #ccc;
+    font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -29,13 +30,15 @@ body {
     height: 92vh;
 }
 
+
 h1 {
-    height: 40px;
-    margin: 50px;
+    margin-top: 50px;
     padding: 0px 35px 35px 35px;
-    background-color: #2d59ac;
+    background-color: #999;
     border-radius: 20px;
     margin-bottom: 5%;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 #log{
@@ -44,20 +47,31 @@ h1 {
 
 
 #credentials{
-    background-color: #2d59ac;
-    border-radius: 20px;
+    background-color: #999;
+    border-radius: 10px;
     padding: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #forgot-password{
     margin-top: 0px;
     font-size: 15px;
 }
 
+
 #forgot-password a{
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
-
+#forgot-password a:hover{
+    color: aliceblue;
+}
+input::placeholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
