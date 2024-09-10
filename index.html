@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Atividade - Página de Login</title>
 </head>
 <body>
-    <h1 id="title">Login</h1>
-    <div id="all">
-        <p>E-mail</p>
-        <input type="email" name="mail" id="mail">
-    </div>
-    <div id="pin">
-        <p>Senha</p>
-        <input type="password" name="pin" id="password"> 
-    </div>
-    <div>
-        <button type="submit" id="log">Entrar</button>
-    </div>
-    <div>
-        <button type="submit" id="res">Cadastrar</button>
-    </div>
+    <form action="">
+        <h1 id="title">Login</h1>
+        <div id="all">
+            <p>E-mail</p>
+            <input type="email" name="mail" id="mail" required>
+        </div>
+        <div id="pin">
+            <p>Senha</p>
+            <input type="password" name="pin" id="password" required> 
+        </div>
+        <div>
+            <button type="submit" id="log"><i class="fa-solid fa-sign-in-alt"></i> Entrar</button>
+        </div>
+    </form>
+    
+    <form action="register" method="post">
+        <div>
+            <button type="submit" id="res"><i class="fa-solid fa-user-plus"></i> Cadastrar</button>
+        </div>
+    </form>
+
     <p id="forgot-password">Esqueceu a senha?</p> 
     
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
