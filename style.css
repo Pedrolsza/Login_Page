@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&display=swap');
 
-#all, #pin {
-    background-color: #efefef; 
-    border-radius: 20px;
-    margin: 15px;
-    padding: 15px;
-    text-align: center;
-
+#all p, #pin p {
+    margin-bottom: -5px; 
+    font-size: 18px;
 }
+
+input{
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+}
+
 body {
     background-color: aqua;
     font-family: "BioRhyme", serif;
@@ -15,15 +20,44 @@ body {
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
-    font-size: 20px;
+    font-size: 25px;
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 92vh;
 }
 
-.header{
-    
+h1 {
+    height: 40px;
+    margin: 50px;
+    padding: 0px 35px 35px 35px;
+    background-color: #2d59ac;
+    border-radius: 20px;
+    margin-bottom: 5%;
 }
+
+#log{
+    width: 95px;
+}
+
+
+#credentials{
+    background-color: #2d59ac;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
+#forgot-password{
+    margin-top: 0px;
+    font-size: 15px;
+}
+
+#forgot-password a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+
+
