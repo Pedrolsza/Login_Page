@@ -3,6 +3,10 @@ document.querySelector('form').addEventListener('submit', function(event) {
   
   const email = document.getElementById('email');
   const password = document.getElementById('password');
+  const name = document.getElementById('name');
+  const surname = document.getElementById('surname');
+  const date = document.getElementById('date');
+
 
   removeWarnings();
 
@@ -21,6 +25,14 @@ document.querySelector('form').addEventListener('submit', function(event) {
     hasError = true;
   } else if (password.value.length < 6) {
     showWarning(password, 'A senha deve ter pelo menos 6 caracteres');
+    hasError = true;
+  }
+
+  if (name.value.trim() === '') {
+    showWarning(name, 'Preencha o nome');
+    hasError = true;
+  } else if (/\d/.test(name)){
+    showWarning(name, 'O nome deve conter apenas letras')
     hasError = true;
   }
 
@@ -44,13 +56,22 @@ function removeWarnings() {
 
 document.getElementById('email').addEventListener('input', enableSubmit);
 document.getElementById('password').addEventListener('input', enableSubmit);
+document.getElementById('name').addEventListener('input', enableSubmit);
+document.getElementById('surname').addEventListener('input', enableSubmit);
+document.getElementById('date').addEventListener('input', enableSubmit);
+
+
 
 function enableSubmit() {
   const email = document.getElementById('email');
   const password = document.getElementById('password');
+  const name = document.getElementById('name');
+  const surname = document.getElementById('surname');
+  const date = document.getElementById('date');
 
-  if (email.value.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value) &&
-      password.value.trim() !== '' && password.value.length >= 6) {
-    document.querySelector('button').disabled = false;
-  }
+  const emailValido = email.value.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+  const senhaValida = password.value.trim() !== '' && password.value.length >= 6;
+  const nomeValido = name.value.trim() !== '' && !/\d/.test(name.value);
+
+  document.querySelector('button').disabled = !(emailValido && senhaValida && nomeValido);
 }
