@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Criar uma nova conta</title>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="register-container">
@@ -14,17 +15,23 @@
       <input type="text" id="name" name="name" placeholder="Nome">
       <label for="surname">Sobrenome</label>
       <input type="text" id="surname" name="surname" placeholder="Sobrenome">
+      <label for="age">Idade</label>
+      <input type="date" id="date" name="date">
       <label for="email">E-mail</label>
       <input type="text" id="email" name="email" placeholder="Email">
       <label for="password">Senha</label>
       <input type="password" id="password" name="password" placeholder="Nova senha">
-      <label for="age">Idade</label>
-      <input type="date" id="date" name="date">
-      <label>Gênero</label><br>
-      <input type="radio" id="masc" name="sex" value="1">
-      <label for="masc">Masculino</label><br>
-      <input type="radio" id="fem" name="sex" value="2">
-      <label for="fem">Feminino</label><br><br>
+      <label>Gênero</label>
+      <div class="gender-container">
+        <label class="gender-option">
+          <input type="radio" name="sex" value="1">
+          Masculino
+        </label>
+        <label class="gender-option">
+          <input type="radio" name="sex" value="2">
+          Feminino
+        </label>
+      </div>
       <button type="submit">Cadastre-se</button>
     </form>
     </div>
