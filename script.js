@@ -63,15 +63,44 @@ document.getElementById('date').addEventListener('input', enableSubmit);
 
 
 function enableSubmit() {
+  const nome = document.getElementById('name');
+  const sobrenome = document.getElementById('surname');
+  const idade = document.getElementById('date');
   const email = document.getElementById('email');
-  const password = document.getElementById('password');
-  const name = document.getElementById('name');
-  const surname = document.getElementById('surname');
-  const date = document.getElementById('date');
+  const senha = document.getElementById('password');
 
-  const emailValido = email.value.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
-  const senhaValida = password.value.trim() !== '' && password.value.length >= 6;
-  const nomeValido = name.value.trim() !== '' && !/\d/.test(name.value);
-
-  document.querySelector('button').disabled = !(emailValido && senhaValida && nomeValido);
+  const campos = [
+    { el: nome, msgVazio: 'Preencha o nome' },
+    { el: sobrenome, msgVazio: 'Preencha o sobrenome' },
+    { el: idade, msgVazio: 'Preencha a idade' },
+    { el: email, msgVazio: 'Preencha o e-mail' },
+{
+  el: senha,
+  validate: value => {
+    if (value.trim() === '') return 'Preencha a senha';
+    if (value.length < 6) return 'A senha deve ter pelo menos 6 caracteres';
+    return null;
+  }
 }
+  ];
+
+  let tudoValido = true;
+
+  campos.forEach(campo => {
+    const valor = campo.el.value.trim();
+    const warning = campo.el.parentElement.querySelector('.warning');
+
+    if (valor === '') {
+      tudoValido = false;
+      if (!warning) {
+        showWarning(campo.el, campo.msgVazio);
+      }
+    } else {
+      if (warning) warning.remove();
+    }
+  });
+
+  return tudoValido;
+}
+
+
